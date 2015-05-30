@@ -1,0 +1,43 @@
+extend layout
+block content
+	p
+		canvas#chart(width='800', height='400')
+		script(src="bower_components/Chart.js/Chart.min.js").
+		script(src="bower_components/moment/moment.js").
+		script(type='text/javascript').
+			var data =!{JSON.stringify(data)}
+			var labels = [];
+			var temperatures = [];
+			var humidities = [];
+			data.forEach(function(entry){
+				entry.date = moment(entry.date).format('D. M. YYYY  H:mm');
+				labels.push(entry.date);
+				temperatures.push(entry.temperature);
+				humidities.push(entry.humidity);
+
+			});
+			var chartData = {
+				labels : labels,
+				datasets : [
+					{
+						label : "Teplota",
+						fillColor : "rgba(172, 14, 26, 0.1)",
+						strokeColor : "#ff0000",
+						pointColor : "#fff",
+						pointStrokeColor : "#ff0000",
+						data : temperatures
+					},
+					{
+						label : "Vlhkost",
+						fillColor : "rgba(20, 20, 212, 0.1)",
+						strokeColor : "#0000ff",
+						pointColor : "#fff",
+						pointStrokeColor : "#0000ff",
+						data : humidities
+					}
+				]
+			}
+
+			var chart = document.getElementById('chart').getContext('2d');
+			new Chart(chart).Line(chartData);
+

@@ -1,0 +1,22 @@
+{
+  "name": "temperature",
+  "version": "0.0.0",
+  "authors": [
+	"Vykook <vykook@icloud.com>"
+  ],
+  "moduleType": [
+	"globals"
+  ],
+  "license": "BSD",
+  "ignore": [
+	"**/.*",
+	"node_modules",
+	"bower_components",
+	"test",
+	"tests"
+  ],
+  "dependencies": {
+	"Chart.js": "~1.0.2",
+	"moment": "~2.10.3"
+  }
+}

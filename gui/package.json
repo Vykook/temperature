@@ -1,0 +1,17 @@
+{
+  "name": "temperature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+	"express": "^4.12.4",
+	"jade": "^1.10.0",
+	"mongodb": "^2.0.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vykook",
+  "license": "BSD"
+}
