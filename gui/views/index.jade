@@ -20,18 +20,18 @@ block content
 				labels : labels,
 				datasets : [
 					{
-						label : "Teplota",
+						label : "°C - Teplota",
 						fillColor : "rgba(172, 14, 26, 0.1)",
 						strokeColor : "#ff0000",
-						pointColor : "#fff",
+						pointColor : "#ff0000",
 						pointStrokeColor : "#ff0000",
 						data : temperatures
 					},
 					{
-						label : "Vlhkost",
+						label : "% - Vlhkost",
 						fillColor : "rgba(20, 20, 212, 0.1)",
 						strokeColor : "#0000ff",
-						pointColor : "#fff",
+						pointColor : "#0000ff",
 						pointStrokeColor : "#0000ff",
 						data : humidities
 					}
@@ -39,5 +39,5 @@ block content
 			}
 
 			var chart = document.getElementById('chart').getContext('2d');
-			new Chart(chart).Line(chartData);
+			new Chart(chart).Line(chartData, {multiTooltipTemplate: "<%= value %><%= datasetLabel %>"});
 

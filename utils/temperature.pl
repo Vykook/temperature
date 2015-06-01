@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 
-open(COM, "+<", "/dev/ttyACM0")|| die "Kurvaprdel!";
+open(COM, "+<", "/dev/ttyACM0")|| die "Sakra!";
 
 while(<COM>){
 	next unless m/^\d{2}\.\d{2}\|\d{2}\.\d{2}/;
